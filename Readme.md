@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Руслан Смирнов](https://up.htmlacademy.ru/javascript-individual/2/user/1478577).
-* Наставник: `Неизвестно`.
+* Наставник: [Никита Сигов](https://htmlacademy.ru/profile/crazer).
 
 ---
 
