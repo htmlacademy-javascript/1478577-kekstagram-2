@@ -1,10 +1,9 @@
 import {
-  ID,
   ID_MAX,
   ID_MIN,
+  COMMENT_ID_MIN,
+  COMMENT_ID_MAX
 } from './data';
-
-let indentifier;
 
 //генератор случайного числа
 const getRandomInteger = (a, b) => {
@@ -15,24 +14,36 @@ const getRandomInteger = (a, b) => {
 };
 
 //получение id
-const getID = () => {
-  if (ID.length > ID_MAX) {
-    return 'Фото кончились';
-  }
-  indentifier = getRandomInteger(ID_MIN, ID_MAX);
-  while (ID.includes(indentifier)) {
-    indentifier = getRandomInteger(ID_MIN, ID_MAX);
-  }
-  ID.push(indentifier);
-  return indentifier;
+const getID = (min, max) => {
+  const IDENTIFIERS = [];
+  return () => {
+    if (IDENTIFIERS.length >= (max - min + 1)) {
+      return;
+    }
+    let indentifier = getRandomInteger(min, max);
+    while (IDENTIFIERS.includes(indentifier)) {
+      indentifier = getRandomInteger(min, max);
+    }
+    IDENTIFIERS.push(indentifier);
+    return indentifier;
+  };
 };
 
+//переменные для каждого уникального идентификатора
+
+const generateIdPhoto = getID (ID_MIN, ID_MAX);
+const generateUrlPhoto = getID (ID_MIN, ID_MAX);
+const generateIdComment = getID (COMMENT_ID_MIN, COMMENT_ID_MAX);
+
+
 //функция получения элемента из массива
-const getElement = (array) => array[getRandomInteger(0, array.length - 1)];
+const getRandomElement = (array) => array[getRandomInteger(0, array.length - 1)];
 
 export {
   getRandomInteger,
   getID,
-  getElement,
-  indentifier,
+  getRandomElement,
+  generateIdPhoto,
+  generateUrlPhoto,
+  generateIdComment
 };

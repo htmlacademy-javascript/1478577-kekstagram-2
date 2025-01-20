@@ -2,7 +2,10 @@ import {
   photosArray
 } from './createPhotoArray.js';
 
+import {
+  renderMiniatures
+} from './renderMiniatures.js';
 
-// eslint-disable-next-line no-console
-console.log(photosArray);
+renderMiniatures (photosArray);
+
 

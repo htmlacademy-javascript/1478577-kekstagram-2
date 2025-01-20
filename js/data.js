@@ -7,20 +7,22 @@ const COMMETS = ['Всё отлично!',
 
 const NAMES = ['Иван', 'Пётр', 'Анастасия', 'Николай', 'Мария', 'Егор', 'Александр', 'Екатерина'];
 
-const ID = [];
+
 const ID_MAX = 25;
 const ID_MIN = 1;
 const LIKE_MIN = 15;
 const LIKE_MAX = 200;
 const COMMENT_MIN = 0;
 const COMMENT_MAX = 30;
+const COMMENT_ID_MAX = 9999;
+const COMMENT_ID_MIN = 0;
 const AVATAR_MIN = 1;
 const AVATAR_MAX = 6;
+
 
 export {
   COMMETS,
   NAMES,
-  ID,
   ID_MAX,
   ID_MIN,
   LIKE_MIN,
@@ -29,4 +31,6 @@ export {
   COMMENT_MAX,
   AVATAR_MIN,
   AVATAR_MAX,
+  COMMENT_ID_MIN,
+  COMMENT_ID_MAX
 };

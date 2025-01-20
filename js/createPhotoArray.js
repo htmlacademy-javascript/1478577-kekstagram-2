@@ -8,8 +8,8 @@ import {
 
 import {
   getRandomInteger,
-  getID,
-  indentifier,
+  generateIdPhoto,
+  generateUrlPhoto,
 } from './util.js';
 
 import {
@@ -17,16 +17,17 @@ import {
 } from './createComment.js';
 
 
-// console.log(createComment()); Почему при таком выводе в консоле выводится функция, но при создании массива всё нормально и создаются объекты?
-
 //функция создания объекта фото
-const createPhoto = () => ({
-  id: getID(),
-  url: `photos/${indentifier}.jpg`,
-  description: `Это фотография №${indentifier}`,
-  likes: getRandomInteger(LIKE_MIN, LIKE_MAX),
-  comments: Array.from({ length: getRandomInteger(COMMENT_MIN, COMMENT_MAX) }, createComment()),
-});
+const createPhoto = () => {
+  const id = generateIdPhoto();
+  return {
+    id: id,
+    url: `photos/${generateUrlPhoto()}.jpg`,
+    description: `Это фотография №${id}`,
+    likes: getRandomInteger(LIKE_MIN, LIKE_MAX),
+    comments: Array.from({ length: getRandomInteger(COMMENT_MIN, COMMENT_MAX) }, createComment),
+  };
+};
 
 const photosArray = Array.from({ length: ID_MAX }, createPhoto);
 
