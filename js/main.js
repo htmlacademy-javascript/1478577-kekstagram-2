@@ -7,5 +7,3 @@ import {
 } from './renderMiniatures.js';
 
 renderMiniatures (photosArray);
-
-
