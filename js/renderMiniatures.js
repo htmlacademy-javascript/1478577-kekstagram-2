@@ -1,9 +1,13 @@
+import {
+  openBigPhoto
+} from './renderBigPhoto';
+
 
 const renderMiniatures = (array) => {
   const fragment = document.createDocumentFragment();
   const miniatureContainer = document.querySelector('.pictures');
 
-  array.forEach(({url, description, likes, comments}) => {
+  array.forEach(({ url, description, likes, comments }) => {
     const template = document.querySelector('#picture').content.cloneNode(true);
     const img = template.querySelector('.picture__img');
     img.src = url;
@@ -14,6 +18,9 @@ const renderMiniatures = (array) => {
 
     const like = template.querySelector('.picture__likes');
     like.textContent = likes;
+    const openPhotoHandler = () => openBigPhoto(url, description, likes, comments);
+    img.addEventListener('click', openPhotoHandler);
+
     fragment.appendChild(template);
   });
 
@@ -22,4 +29,4 @@ const renderMiniatures = (array) => {
 };
 
 
-export {renderMiniatures};
+export { renderMiniatures };

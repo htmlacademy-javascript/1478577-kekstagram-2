@@ -18,6 +18,7 @@ const COMMENT_ID_MAX = 9999;
 const COMMENT_ID_MIN = 0;
 const AVATAR_MIN = 1;
 const AVATAR_MAX = 6;
+const COMMENTS_NEXT = 5;
 
 
 export {
@@ -32,5 +33,6 @@ export {
   AVATAR_MIN,
   AVATAR_MAX,
   COMMENT_ID_MIN,
-  COMMENT_ID_MAX
+  COMMENT_ID_MAX,
+  COMMENTS_NEXT
 };
