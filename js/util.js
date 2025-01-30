@@ -39,11 +39,14 @@ const generateIdComment = getID (COMMENT_ID_MIN, COMMENT_ID_MAX);
 //функция получения элемента из массива
 const getRandomElement = (array) => array[getRandomInteger(0, array.length - 1)];
 
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
 export {
   getRandomInteger,
   getID,
   getRandomElement,
   generateIdPhoto,
   generateUrlPhoto,
-  generateIdComment
+  generateIdComment,
+  isEscapeKey
 };
