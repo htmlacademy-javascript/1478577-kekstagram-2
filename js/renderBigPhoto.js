@@ -1,4 +1,5 @@
 import {COMMENTS_NEXT} from './data';
+import {isEscapeKey} from './util';
 
 const bigPhotoContainer = document.querySelector('.big-picture');
 const urlBigPhoto = document.querySelector('.big-picture__img img');
@@ -44,7 +45,7 @@ const closePhoto = () => {
 };
 
 function closingByEsc(evt) {
-  if (evt.key === 'Escape') {
+  if (isEscapeKey) {
     evt.preventDefault();
     closePhoto();
   }
